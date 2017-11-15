@@ -1,0 +1,395 @@
+Loaded suite /Users/toro/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/rake-12.2.1/lib/rake/rake_test_loader
+Started
+E
+===============================================================================
+Error: test_dump_transcript(RemoteBacTest): URI::InvalidURIError: bad URI(is not URI?): 
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/rfc3986_parser.rb:18:in `rescue in split'
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/rfc3986_parser.rb:15:in `split'
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/rfc3986_parser.rb:73:in `parse'
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/common.rb:231:in `parse'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/connection.rb:37:in `initialize'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:71:in `new'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:71:in `new_connection'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:46:in `raw_ssl_request'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:39:in `ssl_request'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:35:in `ssl_post'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/billing/gateways/bac.rb:90:in `commit'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/billing/gateways/bac.rb:28:in `purchase'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/test/test_helper.rb:296:in `block in dump_transcript_and_fail'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/test/test_helper.rb:289:in `capture_transcript'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/test/test_helper.rb:295:in `dump_transcript_and_fail'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/test/remote/gateways/remote_bac_test.rb:133:in `test_dump_transcript'
+     130:     # you can use that transcript as a reference while
+     131:     # implementing your scrubbing logic.  You can delete
+     132:     # this helper after completing your scrub implementation.
+  => 133:     dump_transcript_and_fail(@gateway, @amount, @credit_card, @options)
+     134:   end
+     135: 
+     136:   def test_transcript_scrubbing
+===============================================================================
+E
+===============================================================================
+Error: test_failed_authorize(RemoteBacTest): URI::InvalidURIError: bad URI(is not URI?): 
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/rfc3986_parser.rb:18:in `rescue in split'
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/rfc3986_parser.rb:15:in `split'
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/rfc3986_parser.rb:73:in `parse'
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/common.rb:231:in `parse'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/connection.rb:37:in `initialize'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:71:in `new'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:71:in `new_connection'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:46:in `raw_ssl_request'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:39:in `ssl_request'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:35:in `ssl_post'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/billing/gateways/bac.rb:90:in `commit'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/billing/gateways/bac.rb:38:in `authorize'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/test/remote/gateways/remote_bac_test.rb:50:in `test_failed_authorize'
+     47:   end
+     48: 
+     49:   def test_failed_authorize
+  => 50:     response = @gateway.authorize(@amount, @declined_card, @options)
+     51:     assert_failure response
+     52:     assert_equal 'REPLACE WITH FAILED AUTHORIZE MESSAGE', response.message
+     53:   end
+===============================================================================
+E
+===============================================================================
+Error: test_failed_capture(RemoteBacTest): NameError: undefined local variable or method `post' for #<ActiveMerchant::Billing::BacGateway:0x00007ffa4c14cd48>
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/billing/gateways/bac.rb:42:in `capture'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/test/remote/gateways/remote_bac_test.rb:64:in `test_failed_capture'
+     61:   end
+     62: 
+     63:   def test_failed_capture
+  => 64:     response = @gateway.capture(@amount, '')
+     65:     assert_failure response
+     66:     assert_equal 'REPLACE WITH FAILED CAPTURE MESSAGE', response.message
+     67:   end
+===============================================================================
+E
+===============================================================================
+Error: test_failed_purchase(RemoteBacTest): URI::InvalidURIError: bad URI(is not URI?): 
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/rfc3986_parser.rb:18:in `rescue in split'
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/rfc3986_parser.rb:15:in `split'
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/rfc3986_parser.rb:73:in `parse'
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/common.rb:231:in `parse'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/connection.rb:37:in `initialize'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:71:in `new'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:71:in `new_connection'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:46:in `raw_ssl_request'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:39:in `ssl_request'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:35:in `ssl_post'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/billing/gateways/bac.rb:90:in `commit'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/billing/gateways/bac.rb:28:in `purchase'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/test/remote/gateways/remote_bac_test.rb:35:in `test_failed_purchase'
+     32:   end
+     33: 
+     34:   def test_failed_purchase
+  => 35:     response = @gateway.purchase(@amount, @declined_card, @options)
+     36:     assert_failure response
+     37:     assert_equal 'REPLACE WITH FAILED PURCHASE MESSAGE', response.message
+     38:   end
+===============================================================================
+E
+===============================================================================
+Error: test_failed_refund(RemoteBacTest): NameError: undefined local variable or method `post' for #<ActiveMerchant::Billing::BacGateway:0x00007ffa4cc46a28>
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/billing/gateways/bac.rb:46:in `refund'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/test/remote/gateways/remote_bac_test.rb:87:in `test_failed_refund'
+     84:   end
+     85: 
+     86:   def test_failed_refund
+  => 87:     response = @gateway.refund(@amount, '')
+     88:     assert_failure response
+     89:     assert_equal 'REPLACE WITH FAILED REFUND MESSAGE', response.message
+     90:   end
+===============================================================================
+E
+===============================================================================
+Error: test_failed_verify(RemoteBacTest): URI::InvalidURIError: bad URI(is not URI?): 
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/rfc3986_parser.rb:18:in `rescue in split'
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/rfc3986_parser.rb:15:in `split'
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/rfc3986_parser.rb:73:in `parse'
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/common.rb:231:in `parse'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/connection.rb:37:in `initialize'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:71:in `new'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:71:in `new_connection'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:46:in `raw_ssl_request'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:39:in `ssl_request'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:35:in `ssl_post'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/billing/gateways/bac.rb:90:in `commit'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/billing/gateways/bac.rb:38:in `authorize'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/billing/gateways/bac.rb:55:in `block (2 levels) in verify'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/billing/response.rb:59:in `process'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/billing/gateways/bac.rb:55:in `block in verify'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/billing/response.rb:45:in `tap'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/billing/response.rb:45:in `run'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/billing/gateways/bac.rb:54:in `verify'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/test/remote/gateways/remote_bac_test.rb:114:in `test_failed_verify'
+     111:   end
+     112: 
+     113:   def test_failed_verify
+  => 114:     response = @gateway.verify(@declined_card, @options)
+     115:     assert_failure response
+     116:     assert_match %r{REPLACE WITH FAILED PURCHASE MESSAGE}, response.message
+     117:   end
+===============================================================================
+E
+===============================================================================
+Error: test_failed_void(RemoteBacTest): NameError: undefined local variable or method `post' for #<ActiveMerchant::Billing::BacGateway:0x00007ffa4cbd6430>
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/billing/gateways/bac.rb:50:in `void'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/test/remote/gateways/remote_bac_test.rb:102:in `test_failed_void'
+      99:   end
+     100: 
+     101:   def test_failed_void
+  => 102:     response = @gateway.void('')
+     103:     assert_failure response
+     104:     assert_equal 'REPLACE WITH FAILED VOID MESSAGE', response.message
+     105:   end
+===============================================================================
+E
+===============================================================================
+Error: test_invalid_login(RemoteBacTest): ArgumentError: Missing required parameter: some_credential
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/billing/gateway.rb:321:in `block in requires!'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/billing/gateway.rb:314:in `each'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/billing/gateway.rb:314:in `requires!'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/billing/gateways/bac.rb:17:in `initialize'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/test/remote/gateways/remote_bac_test.rb:120:in `new'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/test/remote/gateways/remote_bac_test.rb:120:in `test_invalid_login'
+     117:   end
+     118: 
+     119:   def test_invalid_login
+  => 120:     gateway = BacGateway.new(login: '', password: '')
+     121: 
+     122:     response = gateway.purchase(@amount, @credit_card, @options)
+     123:     assert_failure response
+===============================================================================
+E
+===============================================================================
+Error: test_partial_capture(RemoteBacTest): URI::InvalidURIError: bad URI(is not URI?): 
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/rfc3986_parser.rb:18:in `rescue in split'
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/rfc3986_parser.rb:15:in `split'
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/rfc3986_parser.rb:73:in `parse'
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/common.rb:231:in `parse'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/connection.rb:37:in `initialize'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:71:in `new'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:71:in `new_connection'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:46:in `raw_ssl_request'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:39:in `ssl_request'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:35:in `ssl_post'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/billing/gateways/bac.rb:90:in `commit'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/billing/gateways/bac.rb:38:in `authorize'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/test/remote/gateways/remote_bac_test.rb:56:in `test_partial_capture'
+     53:   end
+     54: 
+     55:   def test_partial_capture
+  => 56:     auth = @gateway.authorize(@amount, @credit_card, @options)
+     57:     assert_success auth
+     58: 
+     59:     assert capture = @gateway.capture(@amount-1, auth.authorization)
+===============================================================================
+E
+===============================================================================
+Error: test_partial_refund(RemoteBacTest): URI::InvalidURIError: bad URI(is not URI?): 
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/rfc3986_parser.rb:18:in `rescue in split'
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/rfc3986_parser.rb:15:in `split'
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/rfc3986_parser.rb:73:in `parse'
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/common.rb:231:in `parse'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/connection.rb:37:in `initialize'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:71:in `new'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:71:in `new_connection'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:46:in `raw_ssl_request'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:39:in `ssl_request'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:35:in `ssl_post'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/billing/gateways/bac.rb:90:in `commit'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/billing/gateways/bac.rb:28:in `purchase'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/test/remote/gateways/remote_bac_test.rb:79:in `test_partial_refund'
+     76:   end
+     77: 
+     78:   def test_partial_refund
+  => 79:     purchase = @gateway.purchase(@amount, @credit_card, @options)
+     80:     assert_success purchase
+     81: 
+     82:     assert refund = @gateway.refund(@amount-1, purchase.authorization)
+===============================================================================
+E
+===============================================================================
+Error: test_successful_authorize_and_capture(RemoteBacTest): URI::InvalidURIError: bad URI(is not URI?): 
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/rfc3986_parser.rb:18:in `rescue in split'
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/rfc3986_parser.rb:15:in `split'
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/rfc3986_parser.rb:73:in `parse'
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/common.rb:231:in `parse'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/connection.rb:37:in `initialize'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:71:in `new'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:71:in `new_connection'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:46:in `raw_ssl_request'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:39:in `ssl_request'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:35:in `ssl_post'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/billing/gateways/bac.rb:90:in `commit'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/billing/gateways/bac.rb:38:in `authorize'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/test/remote/gateways/remote_bac_test.rb:41:in `test_successful_authorize_and_capture'
+     38:   end
+     39: 
+     40:   def test_successful_authorize_and_capture
+  => 41:     auth = @gateway.authorize(@amount, @credit_card, @options)
+     42:     assert_success auth
+     43: 
+     44:     assert capture = @gateway.capture(@amount, auth.authorization)
+===============================================================================
+E
+===============================================================================
+Error: test_successful_purchase(RemoteBacTest): URI::InvalidURIError: bad URI(is not URI?): 
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/rfc3986_parser.rb:18:in `rescue in split'
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/rfc3986_parser.rb:15:in `split'
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/rfc3986_parser.rb:73:in `parse'
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/common.rb:231:in `parse'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/connection.rb:37:in `initialize'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:71:in `new'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:71:in `new_connection'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:46:in `raw_ssl_request'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:39:in `ssl_request'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:35:in `ssl_post'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/billing/gateways/bac.rb:90:in `commit'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/billing/gateways/bac.rb:28:in `purchase'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/test/remote/gateways/remote_bac_test.rb:17:in `test_successful_purchase'
+     14:   end
+     15: 
+     16:   def test_successful_purchase
+  => 17:     response = @gateway.purchase(@amount, @credit_card, @options)
+     18:     assert_success response
+     19:     assert_equal 'REPLACE WITH SUCCESS MESSAGE', response.message
+     20:   end
+===============================================================================
+E
+===============================================================================
+Error: test_successful_purchase_with_more_options(RemoteBacTest): URI::InvalidURIError: bad URI(is not URI?): 
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/rfc3986_parser.rb:18:in `rescue in split'
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/rfc3986_parser.rb:15:in `split'
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/rfc3986_parser.rb:73:in `parse'
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/common.rb:231:in `parse'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/connection.rb:37:in `initialize'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:71:in `new'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:71:in `new_connection'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:46:in `raw_ssl_request'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:39:in `ssl_request'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:35:in `ssl_post'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/billing/gateways/bac.rb:90:in `commit'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/billing/gateways/bac.rb:28:in `purchase'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/test/remote/gateways/remote_bac_test.rb:29:in `test_successful_purchase_with_more_options'
+     26:       email: "joe@example.com"
+     27:     }
+     28: 
+  => 29:     response = @gateway.purchase(@amount, @credit_card, options)
+     30:     assert_success response
+     31:     assert_equal 'REPLACE WITH SUCCESS MESSAGE', response.message
+     32:   end
+===============================================================================
+E
+===============================================================================
+Error: test_successful_refund(RemoteBacTest): URI::InvalidURIError: bad URI(is not URI?): 
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/rfc3986_parser.rb:18:in `rescue in split'
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/rfc3986_parser.rb:15:in `split'
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/rfc3986_parser.rb:73:in `parse'
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/common.rb:231:in `parse'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/connection.rb:37:in `initialize'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:71:in `new'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:71:in `new_connection'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:46:in `raw_ssl_request'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:39:in `ssl_request'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:35:in `ssl_post'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/billing/gateways/bac.rb:90:in `commit'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/billing/gateways/bac.rb:28:in `purchase'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/test/remote/gateways/remote_bac_test.rb:70:in `test_successful_refund'
+     67:   end
+     68: 
+     69:   def test_successful_refund
+  => 70:     purchase = @gateway.purchase(@amount, @credit_card, @options)
+     71:     assert_success purchase
+     72: 
+     73:     assert refund = @gateway.refund(@amount, purchase.authorization)
+===============================================================================
+E
+===============================================================================
+Error: test_successful_verify(RemoteBacTest): URI::InvalidURIError: bad URI(is not URI?): 
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/rfc3986_parser.rb:18:in `rescue in split'
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/rfc3986_parser.rb:15:in `split'
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/rfc3986_parser.rb:73:in `parse'
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/common.rb:231:in `parse'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/connection.rb:37:in `initialize'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:71:in `new'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:71:in `new_connection'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:46:in `raw_ssl_request'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:39:in `ssl_request'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:35:in `ssl_post'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/billing/gateways/bac.rb:90:in `commit'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/billing/gateways/bac.rb:38:in `authorize'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/billing/gateways/bac.rb:55:in `block (2 levels) in verify'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/billing/response.rb:59:in `process'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/billing/gateways/bac.rb:55:in `block in verify'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/billing/response.rb:45:in `tap'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/billing/response.rb:45:in `run'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/billing/gateways/bac.rb:54:in `verify'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/test/remote/gateways/remote_bac_test.rb:108:in `test_successful_verify'
+     105:   end
+     106: 
+     107:   def test_successful_verify
+  => 108:     response = @gateway.verify(@credit_card, @options)
+     109:     assert_success response
+     110:     assert_match %r{REPLACE WITH SUCCESS MESSAGE}, response.message
+     111:   end
+===============================================================================
+E
+===============================================================================
+Error: test_successful_void(RemoteBacTest): URI::InvalidURIError: bad URI(is not URI?): 
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/rfc3986_parser.rb:18:in `rescue in split'
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/rfc3986_parser.rb:15:in `split'
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/rfc3986_parser.rb:73:in `parse'
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/common.rb:231:in `parse'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/connection.rb:37:in `initialize'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:71:in `new'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:71:in `new_connection'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:46:in `raw_ssl_request'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:39:in `ssl_request'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:35:in `ssl_post'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/billing/gateways/bac.rb:90:in `commit'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/billing/gateways/bac.rb:38:in `authorize'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/test/remote/gateways/remote_bac_test.rb:93:in `test_successful_void'
+     90:   end
+     91: 
+     92:   def test_successful_void
+  => 93:     auth = @gateway.authorize(@amount, @credit_card, @options)
+     94:     assert_success auth
+     95: 
+     96:     assert void = @gateway.void(auth.authorization)
+===============================================================================
+E
+===============================================================================
+Error: test_transcript_scrubbing(RemoteBacTest): URI::InvalidURIError: bad URI(is not URI?): 
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/rfc3986_parser.rb:18:in `rescue in split'
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/rfc3986_parser.rb:15:in `split'
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/rfc3986_parser.rb:73:in `parse'
+/Users/toro/.rbenv/versions/2.4.2/lib/ruby/2.4.0/uri/common.rb:231:in `parse'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/connection.rb:37:in `initialize'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:71:in `new'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:71:in `new_connection'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:46:in `raw_ssl_request'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:39:in `ssl_request'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/posts_data.rb:35:in `ssl_post'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/billing/gateways/bac.rb:90:in `commit'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/lib/active_merchant/billing/gateways/bac.rb:28:in `purchase'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/test/remote/gateways/remote_bac_test.rb:138:in `block in test_transcript_scrubbing'
+     135: 
+     136:   def test_transcript_scrubbing
+     137:     transcript = capture_transcript(@gateway) do
+  => 138:       @gateway.purchase(@amount, @credit_card, @options)
+     139:     end
+     140:     transcript = @gateway.scrub(transcript)
+     141: 
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/test/test_helper.rb:289:in `capture_transcript'
+/Users/toro/Documents/Desarrollo/Ecommerce_Extensions/active_merchant/test/remote/gateways/remote_bac_test.rb:137:in `test_transcript_scrubbing'
+===============================================================================
+
+
+Finished in 0.056697 seconds.
+------
+17 tests, 0 assertions, 0 failures, 17 errors, 0 pendings, 0 omissions, 0 notifications
+0% passed
+------
+299.84 tests/s, 0.00 assertions/s
