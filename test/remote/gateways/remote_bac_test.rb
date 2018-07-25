@@ -5,7 +5,7 @@ class RemoteBacTest < Test::Unit::TestCase
     @gateway = BacGateway.new(fixtures(:bac))
 
     @amount = 100
-    @credit_card = credit_card('4111111111111111', :verification_value => "999")
+    @credit_card = credit_card('4111 1111 1111 1111', :verification_value => "999", :month => '05', :year => '19')
     @declined_card = credit_card('4000300011112220')
     @options = {
       billing_address: address,
@@ -24,14 +24,14 @@ class RemoteBacTest < Test::Unit::TestCase
 
   def test_successful_purchase_with_more_options
     options = {
-      order_id: '1',
+      #order_id: '1',
       ip: "127.0.0.1",
       email: "joe@example.com"
     }
 
     response = @gateway.purchase(@amount, @credit_card, options)
     assert_success response
-    assert_equal 'REPLACE WITH SUCCESS MESSAGE', response.message
+    assert_equal 'SUCCESS', response.message
   end
 
   def test_failed_purchase

@@ -59,7 +59,8 @@ module ActiveMerchant #:nodoc:
         add_hash_time(post, money, options)
         add_address(post, payment, options)
         add_customer_data(post, options)
-
+        print("POST:\n")
+        print(post)
         commit('sale', post)
       end
 
@@ -169,7 +170,8 @@ module ActiveMerchant #:nodoc:
       #Agrega la informacion de la tarjeta de credito
       def add_payment(post, payment)
         post[:ccnumber] = payment.number
-        post[:ccexp] = "#{payment.month}/#{payment.year}"
+
+        post[:ccexp] = "#{payment.month}/#{payment.year}" || payment.ccExp
         post[:cvv] = payment.verification_value
       end
 
@@ -183,7 +185,7 @@ module ActiveMerchant #:nodoc:
         
         
         
-        #print(URI::decode_www_form(body).to_h)
+        print(URI::decode_www_form(body).to_h)
         URI::decode_www_form(body).to_h
       end
 
@@ -193,7 +195,8 @@ module ActiveMerchant #:nodoc:
         #print(url)
         #print(parameters)
         response = parse(ssl_post(url, post_data(action, parameters)))
-
+        #print("RESPONSE:\n")
+        #print(response)
         Response.new(
           success_from(response),
           message_from(response),
@@ -215,7 +218,7 @@ module ActiveMerchant #:nodoc:
       end
 
       def authorization_from(response)
-        response['transactionid']
+        response['authcode']
       end
 
       def post_data(action, parameters = {}) 
