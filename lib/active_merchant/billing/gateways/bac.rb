@@ -59,8 +59,8 @@ module ActiveMerchant #:nodoc:
         add_hash_time(post, money, options)
         add_address(post, payment, options)
         add_customer_data(post, options)
-        print("POST:\n")
-        print(post)
+        #print("POST:\n")
+        #print(post)
         commit('sale', post)
       end
 
@@ -185,7 +185,7 @@ module ActiveMerchant #:nodoc:
         
         
         
-        print(URI::decode_www_form(body).to_h)
+        #print(URI::decode_www_form(body).to_h)
         URI::decode_www_form(body).to_h
       end
 
